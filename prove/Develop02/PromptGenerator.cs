@@ -1,4 +1,5 @@
 public class PromptGenerator{
+
     // list of prompts
     private List<string> _prompts = new List<string>()
     {
@@ -10,6 +11,7 @@ public class PromptGenerator{
         "What moment can you remember from today?",
         "Would you live this day again? Why or why not."
     };
+    
     // usage of system random class
     public string GetRandomPrompt()
     {

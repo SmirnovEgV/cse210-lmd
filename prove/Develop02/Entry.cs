@@ -1,4 +1,5 @@
 public class Entry{
+
     // useless without get set, especially with file writing and reading.
     public string _prompt {get; set;}
     public string _userInput {get; set;}

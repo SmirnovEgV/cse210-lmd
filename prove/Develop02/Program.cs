@@ -8,8 +8,6 @@ class Program
     {
         int choice;
         Journal journal = new Journal();
-        
-        
 
         do
         {
