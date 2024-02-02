@@ -1,6 +1,11 @@
 using System;
 using System.Collections.Generic;
-
+/// <summary>
+/// I don't know who came up with idea of writing a report as comment but alrigh!
+/// I did optitional modification to the program by making it save entries in JSON format. 
+/// Originally it was some troubles so I also tried to save it to CSV but it nnly took 4 minutes to make so I decided to 
+/// continue with JSON. OVerall it was hard enough but I guess it's beneficial, to have some opposition.
+/// </summary>
 class Program
 {
 
@@ -11,7 +16,7 @@ class Program
 
         do
         {
-            Console.WriteLine("\nWelcome to the Jounral Program!\n");
+            Console.WriteLine("\nWelcome to the Jounral Program!");
             Console.WriteLine("Please select an option:");
             Console.WriteLine("1. Write a new entry");
             Console.WriteLine("2. Display a Jounral");
