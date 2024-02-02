@@ -1,10 +1,10 @@
 using System;
 using System.Collections.Generic;
 /// <summary>
-/// I don't know who came up with idea of writing a report as comment but alrigh!
 /// I did optitional modification to the program by making it save entries in JSON format. 
-/// Originally it was some troubles so I also tried to save it to CSV but it nnly took 4 minutes to make so I decided to 
-/// continue with JSON. OVerall it was hard enough but I guess it's beneficial, to have some opposition.
+/// Originally it was some troubles, so I also tried to save it to CSV, 
+/// but it only took 4 minutes to make, so I decided to continue with JSON. 
+/// Overall it was hard enough, but I guess it's beneficial, to have some opposition.
 /// </summary>
 class Program
 {
@@ -51,7 +51,7 @@ class Program
             }
             else
             {
-                Console.WriteLine("\nInvalid input. Please enter a valid number.\n");
+                Console.WriteLine("\nInvalid input. Please enter a valid number.");
             }
 
         } while (choice != 5);
