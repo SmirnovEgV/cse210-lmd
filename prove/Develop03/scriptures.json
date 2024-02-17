@@ -1,0 +1,50 @@
+[
+  {
+    "book": "1 Nephi",
+    "chapter": "3",
+    "verses": [
+      {
+        "number": "7",
+        "content": "And it came to pass that I, Nephi, said unto my father: I will go and do the things which the Lord hath commanded, for I know that the Lord giveth no bcommandments unto the children of men, save he shall cprepare a way for them that they may accomplish the thing which he commandeth them."
+      }
+    ]
+  },
+
+  {
+    "book": "Mosiah",
+    "chapter": "5",
+    "verses": [
+      {
+        "number": "13",
+        "content": "For how aknoweth a man the master whom he has not served, and who is a stranger unto him, and is far from the thoughts and intents of his heart?"
+      },
+
+      {
+        "number": "14",
+        "content": "And again, doth a man take an ass which belongeth to his neighbor, and keep him? I say unto you, Nay; he will not even suffer that he shall feed among his flocks, but will drive him away, and cast him out. I say unto you, that even so shall it be among you if ye know not the name by which ye are called."
+      }
+    ]
+  },
+
+  {
+    "book": "2 Peter",
+    "chapter": "2",
+    "verses": [
+      {
+        "number": "5",
+        "content": "5 And spared not the old world, but saved aNoah the eighth person, a preacher of brighteousness, bringing in the cflood upon the world of the ungodly;"
+      },
+
+      {
+        "number": "6",
+        "content": "And turning the cities of aSodom and Gomorrha into ashes condemned them with an overthrow, making them an bensample unto those that after should live ungodly;"
+      },
+
+      {
+        "number": "7",
+        "content": "And delivered just aLot, bvexed with the cfilthy conversation of the wicked:"
+      }
+
+    ]
+  }
+]

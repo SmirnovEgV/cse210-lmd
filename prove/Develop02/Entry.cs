@@ -9,3 +9,5 @@ public class Entry{
         Console.WriteLine($"Date: {_date}\nPrompt: {_prompt}\nInput: {_userInput}");
     }
 }
+
+
