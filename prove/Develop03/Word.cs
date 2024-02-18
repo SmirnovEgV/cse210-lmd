@@ -13,7 +13,8 @@ public class Word
     {
         IsHidden = true;
     }
-
+    
+    // Apparently the easiest way to manipulate strings. It either returns normal text or modified string with * (Or anything else).
     public override string ToString()
     {
         if (IsHidden == false)

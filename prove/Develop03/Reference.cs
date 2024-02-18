@@ -31,19 +31,22 @@ public class Reference
         }
 
     }
-
+    // Returns true / false and changes the state of Word object
     public bool RandomizeWord()
     {
-        var isEverythingHidden = Words.Count(x => !x.IsHidden) == 0;
-
-        if (isEverythingHidden)
+        
+        var WordssToHide = Words.Where<Word>(x => !x.IsHidden).ToList();
+        if (WordssToHide.Count == 0)
         {
             return true;
         }
-
-        var word = Words[new Random().Next(Words.Count())];
+        var word = WordssToHide[new Random().Next(WordssToHide.Count())];
         word.Hide();
 
         return false;
+    }
+    public bool IsEverythingHidden()
+    {
+        return  Words.Count(x => !x.IsHidden) == 0; 
     }
 }
