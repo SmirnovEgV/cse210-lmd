@@ -1,36 +1,49 @@
+using System.Text.Json.Serialization;
+
 public class Verse
 {
-    public List<Word> _words;
-    public Verse()
+    private const string SEPARATOR = " ";
+
+    [JsonPropertyName("number")]
+    public string Number { get; set; } = "";
+    [JsonPropertyName("content")]
+    public string Content { get; set; } = "";
+    public List<Word> Words { get; set; } = new List<Word>();
+    public override string ToString()
     {
-        _words = new List<Word>();
+        return $"{Number} {Content}";
     }
 
-    public string number {get; set;}
-    public string content
+    public string ToFormattedString()
     {
-        get { return string.Join(" ",  _words); }
-        
-        set {
-            
-            string[] words = value.Split(' ');
+        var words = string.Join(SEPARATOR, Words.Select(x => x.ToString()));
+        return $"{Number} {words}";
+    }
 
-            foreach(string word in words)
-            {
-                _words.Add(new Word(word));
-            }
+    public void PopulateWords()
+    {
+        Words = new List<Word>();
+        var words = Content.Split(SEPARATOR);
+
+        foreach (var word in words)
+        {
+            Words.Add(new Word(word));
         }
+
     }
 
-    public string ScriptureText()
+    public bool RandomizeWord()
     {
-        string results = string.Join(" ", _words);
-        return results;
-    }
-    public void StateChange() 
-    {
-        int listCount = _words.Count();
+        var isEverythingHidden = Words.Count(x => !x.IsHidden) == 0;
 
+        if (isEverythingHidden)
+        {
+            return true;
+        }
+
+        var word = Words[new Random().Next(Words.Count())];
+        word.Hide();
+
+        return false;
     }
 }
-

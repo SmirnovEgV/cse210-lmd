@@ -1,20 +1,17 @@
-using System;
-
 public class Word
 {
-    public String Text { get; set; }
-    public Boolean IsHidden { get; private set; } = false;
+    private const char SIGN = '*';
+    public string Text { get; set; }
+    public bool IsHidden { get; private set; } = false;
 
-    public Word(String text)
+    public Word(string text)
     {
-        this.Text = text;
+        Text = text;
     }
-    
-
 
     public void Hide()
     {
-        this.IsHidden = true;
+        IsHidden = true;
     }
 
     public override string ToString()
@@ -26,7 +23,7 @@ public class Word
         else
         {
             // Replace the content of _word with stars
-            string _hiddenWord = new string('*', Text.Length);
+            string _hiddenWord = new string(SIGN, Text.Length);
             return _hiddenWord;
         }
     }
