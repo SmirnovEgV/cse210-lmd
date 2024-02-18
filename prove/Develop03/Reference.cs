@@ -1,6 +1,6 @@
 using System.Text.Json.Serialization;
 
-public class Verse
+public class Reference
 {
     private const string SEPARATOR = " ";
 

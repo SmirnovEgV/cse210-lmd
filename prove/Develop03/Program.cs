@@ -32,6 +32,7 @@ class Program
 
         var scriptureLength = scriptures.Count();
         var scriptureIndex = 0;
+        Console.Clear();
         foreach (var scripture in scriptures)
         {
             Console.WriteLine($"{scriptureIndex + 1}) {scripture}");
@@ -57,14 +58,14 @@ class Program
             }
         }
 
-        var isPlaying = true;
-        while (isPlaying)
-        {
-            // Console.Clear();
-            Console.WriteLine("Let's try memorizing it! If you want to quit, enter 'quit'");
-            Console.WriteLine();
 
-            var isEverythingHidden = chosenScripture.RandomizeWords(35);
+        var isMemorizing = true;
+        while (isMemorizing)
+        {
+            Console.Clear();
+            Console.WriteLine("Let's try memorizing it! If you want to quit, enter 'quit'\n");
+
+            var isEverythingHidden = chosenScripture.RandomizeWords(5);
 
             Console.WriteLine(chosenScripture);
 
@@ -72,8 +73,8 @@ class Program
 
             if (input == "quit" || isEverythingHidden)
             {
-                isPlaying = false;
-                Console.WriteLine("Thank you, Good bye!");
+                isMemorizing = false;
+                Console.WriteLine("You've memorized the scripture! Standing by.");
             }
         }
     }

@@ -7,7 +7,7 @@ public class Scripture
     [JsonPropertyName("chapter")]
     public string? Chapter { get; set; }
     [JsonPropertyName("verses")]
-    public List<Verse> Verses { get; set; } = new List<Verse>();
+    public List<Reference> Verses { get; set; } = new List<Reference>();
 
     public void PopulateWords()
     {
@@ -53,9 +53,3 @@ public class Scripture
         return false;
     }
 }
-
-
-
-// Moisiah 5:13-14 - DONE
-// 13 And now....
-// 14 ....

@@ -1,7 +1,7 @@
 public class Word
 {
     private const char SIGN = '*';
-    public string Text { get; set; }
+    public string Text { get; private set; }
     public bool IsHidden { get; private set; } = false;
 
     public Word(string text)
