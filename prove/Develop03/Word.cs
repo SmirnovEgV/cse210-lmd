@@ -24,8 +24,8 @@ public class Word
         else
         {
             // Replace the content of _word with stars
-            string _hiddenWord = new string(SIGN, Text.Length);
-            return _hiddenWord;
+            string hiddenWord = new string(SIGN, Text.Length);
+            return hiddenWord;
         }
     }
 }
