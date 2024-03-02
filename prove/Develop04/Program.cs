@@ -43,9 +43,9 @@ class Program
                     case 4:
                         Console.Clear();
                         Console.WriteLine("The activities you've done for now");
-                        Console.WriteLine($"Breathing Activity done: {breathingActivities?.Count() ?? 0}");
-                        Console.WriteLine($"Reflecting Activity done: {reflectingActivities?.Count() ?? 0}");
-                        Console.WriteLine($"Listing Activity done: {listingActivities?.Count() ?? 0}");
+                        Console.WriteLine("Breathing Activity done: " + (breathingActivities?.Count() ?? 0));
+                        Console.WriteLine("Reflecting Activity done: " + (reflectingActivities?.Count() ?? 0));
+                        Console.WriteLine("Listing Activity done: " + (listingActivities?.Count() ?? 0));
                         Console.WriteLine("Press enter to return to menu: ");
                         Console.Read();
 
