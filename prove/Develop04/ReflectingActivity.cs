@@ -2,11 +2,11 @@ using System;
 using System.Threading;
 
 
-class BreathingActivity : Activity
+class ReflectingActivity : Activity
 {
     private int Cycles;
 
-    public BreathingActivity() : base("Breathing Activity", "This activity will help you relax by walking you through breathing in and out slowly. Clear your mind and focus on your breathing.")
+    public ReflectingActivity() : base("Breathing Activity", "This activity will help you relax by walking you through breathing in and out slowly. Clear your mind and focus on your breathing.")
     {
         
     }
@@ -18,13 +18,13 @@ class BreathingActivity : Activity
 
         for (int i = 0; i < Cycles; i += 1)
         {
-            Console.WriteLine("\nBreathe in...");
+            Console.WriteLine("\n Breathe in...");
             PauseAndShowCountdown(4);
             Thread.Sleep(1000);
 
             if (i < Cycles)
             {   
-                Console.WriteLine("\nBreathe out...");
+                Console.WriteLine("\n Breathe out...");
                 PauseAndShowCountdown(6);
                 Thread.Sleep(1000);
             }

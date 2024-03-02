@@ -13,13 +13,20 @@ public class Activity
     {
         Console.WriteLine($"Welcome to the {activityName}");
         Console.WriteLine(activityDescription);
+        CountDown(5);
+        Console.WriteLine("Press Enter when you are ready...");
+        Console.ReadLine();
+        Console.WriteLine("Starting activity...");
+        CountDown(5);
+        Console.Clear();
     }
 
     public void DisplayEndingMessage()
     {
+        Console.Clear();
         Console.WriteLine("Well done!");
         Console.WriteLine($"You have completed {activityLength} seconds of {activityName}");
-        //CountDown(activityLength);
+        CountDown(10);
     }
 
     public void GetDurationFromUser()

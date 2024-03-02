@@ -7,7 +7,6 @@ class Program
         int choice;
         do
         {
-            Console.Clear();
             Console.WriteLine("Menu Options: \n");
             Console.WriteLine("1. Start Breathing activity");
             Console.WriteLine("2. Start reflecting activity");
@@ -25,8 +24,13 @@ class Program
                         breathing.BreathingExersices();
                         break;
                     case 2:
+                        Console.Clear();
+
                         break;
                     case 3:
+                        Console.Clear();
+                        ListingActivity listing = new ListingActivity();
+                        listing.ListingExercises();
                         break;
                     case 4:
                         Console.WriteLine("Exiting...");
