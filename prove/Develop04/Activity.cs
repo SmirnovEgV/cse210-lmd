@@ -14,6 +14,7 @@ public class Activity
         Console.WriteLine($"Welcome to the {activityName}");
         Console.WriteLine(activityDescription);
         CountDown(5);
+        GetDurationFromUser();
         Console.WriteLine("Press Enter when you are ready...");
         Console.ReadLine();
         Console.WriteLine("Starting activity...");
@@ -29,7 +30,7 @@ public class Activity
         CountDown(10);
     }
 
-    public void GetDurationFromUser()
+    private void GetDurationFromUser()
     {
         Console.Write("Enter the duration in seconds: ");
         while (true)
@@ -55,7 +56,7 @@ public class Activity
             case 3: Console.WriteLine("\\"); break;
         }
     Console.SetCursorPosition(Console.CursorLeft, Console.CursorTop - 1);
-    Thread.Sleep(250);
+    Thread.Sleep(500);
     }
     Console.WriteLine(" ");
     }

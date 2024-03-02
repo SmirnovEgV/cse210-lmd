@@ -25,7 +25,8 @@ class Program
                         break;
                     case 2:
                         Console.Clear();
-
+                        ReflectingActivity reflecting = new ReflectingActivity();
+                        reflecting.ReflectingExersices();
                         break;
                     case 3:
                         Console.Clear();

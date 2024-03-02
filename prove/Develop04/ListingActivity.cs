@@ -4,7 +4,7 @@ using System.Threading;
 
 class ListingActivity : Activity
 {
-    private int duration;
+    private int _duration;
 
     public ListingActivity() : base("Listing Activity", "This activity will help you reflect on the good things in your life by having you list as many things as you can in a certain area.")
     {
@@ -14,8 +14,7 @@ class ListingActivity : Activity
     public void ListingExercises()
     {
         DisplayStartingMessage();
-        GetDurationFromUser();
-        duration = activityLength;
+        _duration = activityLength;
 
         string randomPrompt = GetRandomPrompt();
         Console.WriteLine(randomPrompt);
@@ -27,7 +26,7 @@ class ListingActivity : Activity
         Console.WriteLine("Press Enter after each item. You can continue until the time runs out...");
 
         int itemCount = 0;
-        DateTime endTime = DateTime.Now.AddSeconds(duration);
+        DateTime endTime = DateTime.Now.AddSeconds(_duration);
 
         while (DateTime.Now < endTime)
         {

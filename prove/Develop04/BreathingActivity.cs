@@ -4,7 +4,7 @@ using System.Threading;
 
 class BreathingActivity : Activity
 {
-    private int Cycles;
+    private int _cycles;
 
     public BreathingActivity() : base("Breathing Activity", "This activity will help you relax by walking you through breathing in and out slowly. Clear your mind and focus on your breathing.")
     {
@@ -13,16 +13,15 @@ class BreathingActivity : Activity
     public void BreathingExersices()
     {
         DisplayStartingMessage();
-        GetDurationFromUser();
-        Cycles = activityLength / 10;
+        _cycles = activityLength / 10;
 
-        for (int i = 0; i < Cycles; i += 1)
+        for (int i = 0; i < _cycles; i += 1)
         {
             Console.WriteLine("\nBreathe in...");
             PauseAndShowCountdown(4);
             Thread.Sleep(1000);
 
-            if (i < Cycles)
+            if (i < _cycles)
             {   
                 Console.WriteLine("\nBreathe out...");
                 PauseAndShowCountdown(6);
