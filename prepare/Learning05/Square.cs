@@ -10,6 +10,6 @@ class Square : Shape
 
     public override double GetArea()
     {
-        return _side * 2;
+        return _side * _side;
     }
 }
