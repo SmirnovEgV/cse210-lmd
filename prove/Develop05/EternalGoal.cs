@@ -4,16 +4,22 @@ class EternalGoal : Goal
     {
         
     }
-    public override void SetDone()
+    public override void SetDone(Goal goal)
     {
-        base.SetDone();
     }
-    public override void CreateGoal()
+    public override EternalGoal CreateGoal()
     {
-        base.CreateGoal();
+        Console.WriteLine("Input the name for an Eternal Goal");
+        string name = Console.ReadLine();
+        Console.WriteLine("Input the description for an Eternal Goal");
+        string description = Console.ReadLine();
+        Console.WriteLine("How many points would you want on completion");
+        int points = int.Parse(Console.ReadLine());
+        EternalGoal eternalGoal = new EternalGoal(name,description,points);
+        return eternalGoal;
     }
-    public override void GetPoints()
+    public override int GetPoints(Goal goal)
     {
-        base.GetPoints();
+        return _goalPoints;
     }
 }

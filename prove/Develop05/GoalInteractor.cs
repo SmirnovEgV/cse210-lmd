@@ -18,6 +18,9 @@ class GoalInteractor
     {
         int choice = 0;
         Console.Write("Select a Goal type to set: ");
+        Console.WriteLine("\t1. Simple Goal");
+        Console.WriteLine("\t2. Eternal Goal");
+        Console.WriteLine("\t3. Compound Goal");
             if(int.TryParse(Console.ReadLine(), out choice))
             {
                 switch(choice)

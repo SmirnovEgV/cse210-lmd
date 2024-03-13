@@ -11,17 +11,17 @@ public class Goal
         _goalPoints = points;
     }
 
-    public virtual void SetDone()
-    {
-
-    }
-    public virtual void CreateGoal()
+    public virtual void SetDone(Goal goal)
     {
         
     }
-    public virtual void GetPoints()
+    public virtual Goal CreateGoal()
     {
-        
+        return null;   
+    }
+    public virtual int GetPoints(Goal goal)
+    {
+        return _goalPoints;
     }
 
 }
