@@ -4,10 +4,11 @@ class Program
 {
     static void Main(string[] args)
     {
+        int points = 0;
         int choice;
         do
         {
-            Console.WriteLine($"You have 'points' points \n");
+            Console.WriteLine($"You have {points} points \n");
             Console.WriteLine("Menu Options:");
             Console.WriteLine("\t1. Create New Goal");
             Console.WriteLine("\t2. List Goals");
@@ -22,14 +23,22 @@ class Program
                 switch(choice)
                 {
                     case 1:
+                        // create a new goal one out of 3
+                        // call a thing and use there switch
+                        // add negative goals that whenever happen will deduct points.
+                        // can be eternal, simple or complex
                         break;
                     case 2:
+                        // list things that where created originally
                         break;
                     case 3:
+                        // Save things to a txt file
                         break;
                     case 4:
+                        // load things from txt file
                         break;
                     case 5:
+                        // record goal completion
                         break;
                     case 6:
                         Console.WriteLine("Exiting the application...");
