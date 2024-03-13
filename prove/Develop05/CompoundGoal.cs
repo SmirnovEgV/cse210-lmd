@@ -4,11 +4,11 @@ class CompoundGoal : Goal
     private int _numberOfCompletions;
     private int _completionsCounter;
     private int _bonusPoints;
-    public CompoundGoal() : base("","",0)
+    public CompoundGoal(string name, string description, int points, int numberOfCompletions, int bonusPoints) : base(name, description, points)
     {
         _isDone = false;
-        _numberOfCompletions = 0;
-        _bonusPoints = 0;
+        _numberOfCompletions = numberOfCompletions;
+        _bonusPoints = bonusPoints;
         
     }
     public override void SetDone()

@@ -1,8 +1,8 @@
 class EternalGoal : Goal
 {
-    public EternalGoal() : base("","",0)
+    public EternalGoal(string name, string description, int points) : base(name, description, points)
     {
-
+        
     }
     public override void SetDone()
     {

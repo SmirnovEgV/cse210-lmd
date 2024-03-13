@@ -3,9 +3,10 @@ class SimpleGoal : Goal
 
     private bool _isDone;
 
-    public SimpleGoal() : base("","",0)
+    public SimpleGoal(string name, string description, int points) : base(name, description, points)
     {
         _isDone = false;
+        
     }
 
     public override void SetDone()
