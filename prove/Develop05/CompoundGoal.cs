@@ -9,10 +9,19 @@ class CompoundGoal : Goal
         _isDone = false;
         _numberOfCompletions = numberOfCompletions;
         _bonusPoints = bonusPoints;
+        _completionsCounter = 0;
         
     }
     public override void SetDone(Goal goal)
     {
+        if(_completionsCounter < _numberOfCompletions)
+        {
+            _completionsCounter++ ; 
+        }
+        else
+        {
+            CheckForCompletion();
+        }
 
     }
     public override CompoundGoal CreateGoal()
@@ -38,7 +47,8 @@ class CompoundGoal : Goal
 
     private void CheckForCompletion()
     {
-        
+        _isDone = true;
+        _goalPoints += _bonusPoints;
     }
 
 }
