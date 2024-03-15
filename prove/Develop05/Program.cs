@@ -3,11 +3,15 @@ using System;
 class Program
 {
     static void Main(string[] args)
-    {
+    {   
+        GoalInteractor goalInteractor = new GoalInteractor();
         int points = 0;
         int choice;
+        
         do
         {
+            points = goalInteractor.ShowPoints();
+            Console.Clear();
             Console.WriteLine($"You have {points} points \n");
             Console.WriteLine("Menu Options:");
             Console.WriteLine("\t1. Create New Goal");
@@ -23,11 +27,12 @@ class Program
                 switch(choice)
                 {
                     case 1:
-                        GoalInteractor goalInteractor = new GoalInteractor();
                         goalInteractor.GoalChoice();
                         break;
                     case 2:
-                        // list things that where created originally
+                        goalInteractor.ListAllGoals();
+                        Console.Write("Press any key to continue ");
+                        Console.ReadLine();
                         break;
                     case 3:
                         // Save things to a txt file
@@ -36,7 +41,9 @@ class Program
                         // load things from txt file
                         break;
                     case 5:
-                        // record goal completion
+                        goalInteractor.SomeMEthod();
+                        Console.Write("Press any key to continue ");
+                        Console.ReadLine();
                         break;
                     case 6:
                         Console.WriteLine("Exiting the application...");

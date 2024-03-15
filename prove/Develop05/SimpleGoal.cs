@@ -1,7 +1,8 @@
 class SimpleGoal : Goal
 {
-
+    private string status = "";
     private bool _isDone;
+    private int counter = 0;
 
     public SimpleGoal(string name, string description, int points) : base(name, description, points)
     {
@@ -11,21 +12,27 @@ class SimpleGoal : Goal
     public override void SetDone(Goal goal)
     {
         _isDone = true;
+        status = "X";
     }
-    public override SimpleGoal CreateGoal()
-    {
-        Console.WriteLine("Input the name for a Compound Goal");
-        string name = Console.ReadLine();
-        Console.WriteLine("Input the description for a Compound Goal");
-        string description = Console.ReadLine();
-        Console.WriteLine("How many points would you want on completion");
-        int points = int.Parse(Console.ReadLine());
-        SimpleGoal simpleGoal = new SimpleGoal(name,description,points);
-        return simpleGoal;
-    }
+    
+    
     public override int GetPoints(Goal goal)
     {
-        return _goalPoints;
+        
+        if (_isDone == true && counter == 0)
+        {
+            counter = 1;
+            return _goalPoints;
+        }
+        else{
+            return 0;
+        }
+        
+    }
+    public override string ToString()
+    {
+        // Provide a string representation of EternalGoal object
+        return $"[{status}] Simple Goal: Name - {_goalName}, description -{_goalDescription}, poinst - {_goalPoints}";
     }
 
 }

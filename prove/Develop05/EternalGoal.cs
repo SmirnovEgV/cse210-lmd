@@ -1,25 +1,32 @@
 class EternalGoal : Goal
 {
+    private string status = "";
+    private int counter = 0;
+    private int pointsReturend = 0;
+    
     public EternalGoal(string name, string description, int points) : base(name, description, points)
     {
-        
     }
     public override void SetDone(Goal goal)
     {
+        counter ++;
+        pointsReturend += _goalPoints;
     }
-    public override EternalGoal CreateGoal()
-    {
-        Console.WriteLine("Input the name for an Eternal Goal");
-        string name = Console.ReadLine();
-        Console.WriteLine("Input the description for an Eternal Goal");
-        string description = Console.ReadLine();
-        Console.WriteLine("How many points would you want on completion");
-        int points = int.Parse(Console.ReadLine());
-        EternalGoal eternalGoal = new EternalGoal(name,description,points);
-        return eternalGoal;
-    }
+   
     public override int GetPoints(Goal goal)
     {
-        return _goalPoints;
+        if(counter == 0)
+        {
+            return pointsReturend;
+        }
+        else
+        {
+            return pointsReturend;
+        }
+    }
+    public override string ToString()
+    {
+        // Provide a string representation of EternalGoal object
+        return $"[{status}] Eternal Goal: Name - {_goalName}, description - {_goalDescription}, points - {_goalPoints}";
     }
 }
