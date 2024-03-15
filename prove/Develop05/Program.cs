@@ -23,10 +23,8 @@ class Program
                 switch(choice)
                 {
                     case 1:
-                        // create a new goal one out of 3
-                        // call a thing and use there switch
-                        // add negative goals that whenever happen will deduct points.
-                        // can be eternal, simple or complex
+                        GoalInteractor goalInteractor = new GoalInteractor();
+                        goalInteractor.GoalChoice();
                         break;
                     case 2:
                         // list things that where created originally

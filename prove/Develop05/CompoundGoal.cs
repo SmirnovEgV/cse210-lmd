@@ -24,7 +24,7 @@ class CompoundGoal : Goal
         }
 
     }
-    public static CompoundGoal CreateGoalFromUserInput()
+    public override CompoundGoal CreateGoal()
     {
         Console.WriteLine("Input the name for a Compound Goal");
         string name = Console.ReadLine();
