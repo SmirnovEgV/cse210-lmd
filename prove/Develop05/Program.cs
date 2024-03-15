@@ -51,6 +51,6 @@ class Program
             }
 
         }
-        while(choice != 5);
+        while(choice != 6);
     }
 }
