@@ -44,5 +44,17 @@ class GoalCreator
         SimpleGoal simpleGoal = new SimpleGoal(name,description,points);
         return simpleGoal;
     }
+    public NegativeSimpleGoal CreateNegativeGoal()
+    {
+        Console.WriteLine("\t4. Negative Goal");
+        Console.WriteLine("Input the name for a Negative Goal");
+        string name = Console.ReadLine();
+        Console.WriteLine("Input the description for a Negative Goal");
+        string description = Console.ReadLine();
+        Console.WriteLine("How many points it will cost you?");
+        int points = int.Parse(Console.ReadLine());
+        NegativeSimpleGoal negative = new NegativeSimpleGoal(name,description,points);
+        return negative;
+    }
 
 }

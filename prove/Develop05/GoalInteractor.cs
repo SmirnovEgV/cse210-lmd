@@ -69,7 +69,8 @@ class GoalInteractor
         Console.WriteLine("\t1. Simple Goal");
         Console.WriteLine("\t2. Eternal Goal");
         Console.WriteLine("\t3. Compound Goal");
-        Console.WriteLine("\t4. Return");
+        Console.WriteLine("\t4. Negative Goal");
+        Console.WriteLine("\t5. Return");
             if(int.TryParse(Console.ReadLine(), out choice))
             {
                 switch(choice)
@@ -90,6 +91,9 @@ class GoalInteractor
                         _goals.Add(compoundGoal);
                         break;
                      case 4:
+                        Console.Clear();
+                        NegativeSimpleGoal negativeSimpleGoal = goalCreator.CreateNegativeGoal();
+                        _goals.Add(negativeSimpleGoal);
                         Console.WriteLine("\t4. Return");
                         break;
                     default:
