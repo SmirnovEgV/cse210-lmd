@@ -4,6 +4,7 @@ class CompoundGoal : Goal
     private int _requiredCompletions;
     private int _completionsCounter;
     private int _bonusPoints;
+    private int someCounter = 1;
     private string status = "";
 
     public CompoundGoal(string name, string description, int points, int requiredCompletions, int bonusPoints) : base(name, description, points)
@@ -24,16 +25,21 @@ class CompoundGoal : Goal
         {
             CheckForCompletion();
         }
-        else
-        {
-             Console.WriteLine("BRUH");
-        }
 
     }
 
     public override int GetPoints(Goal goal)
     {
-        return _goalPoints;
+        if(_completionsCounter == someCounter)
+        {
+            someCounter ++;
+            return _goalPoints;
+        }
+        else
+        {
+           return 0; 
+        }
+        
     }
 
     private void CheckForCompletion()

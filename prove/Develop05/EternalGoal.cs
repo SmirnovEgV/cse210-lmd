@@ -1,27 +1,29 @@
 class EternalGoal : Goal
 {
     private string status = "";
-    private int counter = 0;
-    private int pointsReturend = 0;
+    private int counterA = 0;
+    private int counterB = 0;
+    private int pointsReturend;
     
     public EternalGoal(string name, string description, int points) : base(name, description, points)
     {
     }
     public override void SetDone(Goal goal)
     {
-        counter ++;
-        pointsReturend += _goalPoints;
+        counterA ++;
+        pointsReturend = _goalPoints;
     }
    
     public override int GetPoints(Goal goal)
     {
-        if(counter == 0)
+        if(counterA != counterB )
         {
+            counterB ++;
             return pointsReturend;
         }
         else
         {
-            return pointsReturend;
+            return 0;
         }
     }
     public override string ToString()
