@@ -23,5 +23,9 @@ public class Goal
     {
         return _goalPoints;
     }
+    public virtual string GetConvertedString()
+    {
+        return "";
+    }
 
 }

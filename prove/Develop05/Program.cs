@@ -35,13 +35,14 @@ class Program
                         Console.ReadLine();
                         break;
                     case 3:
-                        // Save things to a txt file
+                        goalInteractor.Save();
                         break;
                     case 4:
-                        // load things from txt file
+                        goalInteractor.Load();
+                        Console.Read();
                         break;
                     case 5:
-                        goalInteractor.SomeMEthod();
+                        goalInteractor.SetDoneGoalEnumerator();
                         Console.Write("Press any key to continue ");
                         Console.ReadLine();
                         break;

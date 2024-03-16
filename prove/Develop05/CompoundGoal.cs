@@ -12,9 +12,17 @@ class CompoundGoal : Goal
         _isDone = false;
         _requiredCompletions = requiredCompletions;
         _bonusPoints = bonusPoints;
-        _completionsCounter = 0;
-        
+        _completionsCounter = 0;  
     }
+
+    public CompoundGoal(string name, string description, int points, int requiredCompletions,int completionsDone, int bonusPoints) : base(name, description, points)
+    {
+        _isDone = false;
+        _requiredCompletions = requiredCompletions;
+        _bonusPoints = bonusPoints;
+        _completionsCounter = completionsDone;  
+    }
+
     public override void SetDone(Goal goal)
     {
         if(_completionsCounter != _requiredCompletions)
@@ -52,6 +60,10 @@ class CompoundGoal : Goal
     {
         // Provide a string representation of EternalGoal object
         return $"[{status}] Compound Goal: Name - {_goalName}, description - {_goalDescription}, points per completion - {_goalPoints}, completions {_completionsCounter}/{_requiredCompletions}";
+    }
+    public override string GetConvertedString()
+    {
+        return $"{_goalName}/{_goalDescription}/{_goalPoints}/{_completionsCounter}/{_requiredCompletions}/{_bonusPoints}/{_isDone}";
     }
 
 }

@@ -1,11 +1,26 @@
 class GoalInteractor 
 { 
     List<Goal> _goals = new List<Goal>();
-    private int totalPoints = 0;
+    SaveAndLoad _saveAndLoad = new SaveAndLoad();
+    private int _totalPoints = 0;
+    
 
     public Goal ChooseGoalToComplete()
     {
         return null;
+    }
+
+    public void Save()
+    {
+        string _stringpoints = _totalPoints.ToString();
+        string _filename = _saveAndLoad.PromptForFileName();
+        _saveAndLoad.WriteGoalsToCsv(_filename,_goals,_stringpoints);
+    }
+    public void Load()
+    {
+        string _filename = _saveAndLoad.PromptForFileName();
+        _totalPoints = _saveAndLoad.RetrunTotalPoints(_filename);
+        _goals = _saveAndLoad.LoadGoalsFromCsv(_filename);
     }
     public void ListAllGoals()
     {
@@ -20,31 +35,29 @@ class GoalInteractor
 
         foreach (Goal goal in _goals)
         {
-            totalPoints += goal.GetPoints(goal);
+            _totalPoints += goal.GetPoints(goal);
         }
 
-        return totalPoints;
+        return _totalPoints;
     }
 
-    public void SomeMEthod()
+    public void SetDoneGoalEnumerator()
     {
         for (int i = 0; i < _goals.Count; i++)
         {
             Console.WriteLine($"{i + 1}. {_goals[i]}");
         }
         
-        // Prompt the user to input the enumeration of the item they want to choose
-        Console.Write("Enter the enumeration of the item you want to choose: ");
+        Console.Write("Enter the number of the item you want to set: ");
         if (int.TryParse(Console.ReadLine(), out int selected))
         {
-            // Check if the selected enumeration is within the valid range
+        
             if (selected >= 1 && selected <= _goals.Count)
             {
-                // Access the selected item from _goals and perform actions accordingly
-                Goal selectedGoal = _goals[selected - 1]; // Adjust for 0-based index
-                // Do something with the selected goal
+                
+                Goal selectedGoal = _goals[selected - 1];             
                 selectedGoal.SetDone(_goals[selected - 1]);
-                Console.WriteLine("You've completed the goal!");
+                Console.WriteLine("You've recorded the goal");
             }
             else
             {
@@ -56,6 +69,7 @@ class GoalInteractor
             Console.WriteLine("Invalid input.");
         }
     }
+
 
     public void GoalChoice()
     {
@@ -102,7 +116,7 @@ class GoalInteractor
                 }
             }
         }
-        while (choice != 4);
+        while (choice != 5);
     }
 }
        

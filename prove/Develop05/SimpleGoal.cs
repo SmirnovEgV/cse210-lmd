@@ -34,5 +34,9 @@ class SimpleGoal : Goal
         // Provide a string representation of EternalGoal object
         return $"[{status}] Simple Goal: Name - {_goalName}, description -{_goalDescription}, poinst - {_goalPoints}";
     }
+    public override string GetConvertedString()
+    {
+        return $"{_goalName}/{_goalDescription}/{_goalPoints}/{_isDone}";
+    }
 
 }

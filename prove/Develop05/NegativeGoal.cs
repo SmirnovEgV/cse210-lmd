@@ -2,11 +2,13 @@ class NegativeSimpleGoal : Goal
 {
     private string status = "";
     private bool _isDone;
-    private int counter = 0;
+    private int _counter = 0;
+    public string _goalConvertedToString;
 
     public NegativeSimpleGoal(string name, string description, int points) : base(name, description, points)
     {
         _isDone = false;
+        _goalConvertedToString = $"{name}/{description}/{points}";
     }
 
     public override void SetDone(Goal goal)
@@ -17,9 +19,9 @@ class NegativeSimpleGoal : Goal
     
     public override int GetPoints(Goal goal)
     {
-        if (_isDone == true && counter == 0)
+        if (_isDone == true && _counter == 0)
         {
-            counter = 1;
+            _counter = 1;
             return -_goalPoints; // Return negative points
         }
         else
@@ -32,5 +34,9 @@ class NegativeSimpleGoal : Goal
     {
         // Provide a string representation of NegativeSimpleGoal object
         return $"[{status}] Negative Simple Goal: Name - {_goalName}, description -{_goalDescription}, points - {_goalPoints}";
+    }
+    public override string GetConvertedString()
+    {
+        return $"{_goalName}/{_goalDescription}/{_goalPoints}/{_isDone}";
     }
 }
