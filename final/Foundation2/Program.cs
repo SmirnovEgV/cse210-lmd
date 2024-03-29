@@ -4,18 +4,21 @@ class Program
 {
     static void Main(string[] args)
     {
-        Order order1 = new Order("Jason Shnider");
-        order1.GenerateItem("Stuff", 111, 4.5, 3);
-        order1.GenerateItem("Shlongs", 0101, 100, 1);
+        Order order1 = new Order("Jason Shnider","Nelly Strause 95 1", "Dresden","West","DE");
+        order1.GenerateItem("Pilk", 0001 , 3.45, 2);
+        order1.GenerateItem("Mice Defender xm69", 0169, 45, 4);
         order1.GenerateItem("Pepe the frog", 0420, 43.50, 2);
-        order1.GetPackagingLable();
-        order1.GetShippingLable();
+        
+        Order order2 = new Order("Makey Maakarov","42E 7N","Jackson","FL","US");
+        order2.GenerateItem("Drugs", 0010, 95.90, 1);
+        order2.GenerateItem("Blanket", 0201, 11.90, 1);
+        order2.GenerateItem("Spoons", 0002, 6.50, 10);
 
-        Order order2 = new Order("Makey Maakarov");
-        order2.GenerateItem("Snuff", 211, 95.90, 1);
-        order2.GenerateItem("Keksy", 0201, 5, 3);
-        order2.GenerateItem("NateHIGGERS", 1488, 11.50, 5);
-        order2.GetPackagingLable();
+        Console.Clear();
+        order1.GetShippingLable();
+        order1.GetPackagingLable();
+        Console.WriteLine("\n Next Order");
         order2.GetShippingLable();
+        order2.GetPackagingLable();
     }
 }

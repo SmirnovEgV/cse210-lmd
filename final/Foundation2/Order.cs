@@ -3,9 +3,11 @@ public class Order
     Customer _customer;
     List<Product> _items = new List<Product>(); 
 
-    public Order(string customerName)
+    public Order(string customerName, string street, string city, string stateOrProvince, string country)
     {   
-        _customer = new Customer(customerName);
+        Address address = new Address(street,city,stateOrProvince,country);
+        _customer = new Customer(customerName,address);
+
     }
     public void GenerateItem(string titlePassed, int idPassed, double pricePassed, int quantityPassed)
     {
@@ -49,17 +51,18 @@ public class Order
         else
         {
             string totalString = GetTotalPrice();
+            Console.WriteLine("| Oredered items |");
             foreach (Product product in _items)
                 {
-                    product.GetProductLine();
+                    Console.WriteLine(product.GetProductLine());
                 }
         
-            Console.WriteLine($"\n");
+            Console.WriteLine(totalString);
         }
     }
     public void GetShippingLable()
     {
-        Console.WriteLine("Customer Name and address");
+        Console.WriteLine("|Customer Name and address|");
         Console.WriteLine(_customer.GetCustomerInfo());
     }
 

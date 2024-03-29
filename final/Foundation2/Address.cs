@@ -15,7 +15,7 @@ public class Address
 
     public string GetFormattedAddress()
     {
-        string address = $"{_street}, {_city} \n {_stateOrProvince}, {_country}";
+        string address = $"\n\t{_street}, {_city} \n\t{_stateOrProvince}, {_country}";
         return address;
     }
 
