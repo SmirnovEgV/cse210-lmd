@@ -16,17 +16,20 @@ public class Order
         Product product = new Product(title,id,price,quantity);
         _items.Add(product);
     }
-    private double GetTotalPrice()
+    private string GetTotalPrice()
     {
         double totalPrice;
+        int shipping;
         string inUs = _customer.IsInUS();
         if (inUs == "US")
         {
             totalPrice = 5;
+            shipping = 5;
         }
         else
         {
             totalPrice = 35;
+            shipping = 35;
         } 
 
             foreach (Product product in _items)
@@ -34,7 +37,7 @@ public class Order
                 double itemsCost =  product.GetCost();
                 totalPrice += itemsCost;
             }
-            return totalPrice;
+            return $"Your total product price is ${totalPrice} from which shipping is ${shipping}.";
     }
 
     public void GetPackagingLable()
@@ -45,13 +48,13 @@ public class Order
         }
         else
         {
-            double total = GetTotalPrice();
+            string totalString = GetTotalPrice();
             foreach (Product product in _items)
                 {
                     product.GetProductLine();
                 }
         
-            Console.WriteLine($"\n Total price + shipping :{total}");
+            Console.WriteLine($"\n");
         }
     }
     public void GetShippingLable()
