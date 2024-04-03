@@ -1,0 +1,53 @@
+using System;
+
+public class Event
+{
+    // Protected variables
+    protected string _type;
+    protected string _title;
+    protected string _description;
+    protected DateTime _date;
+    protected TimeSpan _time;
+    protected string _address;
+
+    // Constructor
+    public Event(string type, string title, string description, DateTime date, TimeSpan time, Address address)
+    {
+        _type = type;
+        _title = title;
+        _description = description;
+        _date = date;
+        _time = time;
+        _address = address.OuptutAddress();
+    }
+
+    
+    // Method to display a standard message
+    public void StandardMessage()
+    {
+        Console.WriteLine($"Event: {_title}");
+        Console.WriteLine($"Description: {_description}");
+        Console.WriteLine($"Date: {_date.ToShortDateString()}");
+        Console.WriteLine($"Time: {_time.ToString("hh':'mm tt")}");
+        Console.WriteLine($"Address: {_address}\n");
+    }
+
+    // Method to display a long message
+    public virtual void LongMessage()
+    {
+        Console.WriteLine($"Type: {_type}");
+        Console.WriteLine($"Event: {_title}");
+        Console.WriteLine($"Description: {_description}");
+        Console.WriteLine($"Date: {_date.ToShortDateString()}");
+        Console.WriteLine($"Time: {_time.ToString("hh':'mm tt")}");
+        Console.WriteLine($"Address: {_address}");
+        Console.WriteLine($"Description: {_description}\n");
+    }
+
+    // Method to display a short message
+    public void ShortMessage()
+    {
+        Console.WriteLine($"Event: {_type} ({_title})");
+        Console.WriteLine($"Date: {_date.ToShortDateString()}\n");
+    }
+}
