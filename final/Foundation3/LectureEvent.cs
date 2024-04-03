@@ -7,7 +7,7 @@ public class LectureEvent : Event
     private int _capacity;
 
     // Constructor
-    public LectureEvent(string type, string title, string description, DateTime date, TimeSpan time, Address address, string presenterName, int capacity) : base(type, title, description, date, time, address)
+    public LectureEvent(string type, string title, string description, string date, string time, Address address, string presenterName, int capacity) : base(type, title, description, date, time, address)
     {
         _presenterName = presenterName;
         _capacity = capacity;

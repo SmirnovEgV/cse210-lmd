@@ -4,7 +4,7 @@ public class OutdoorEvent : Event
     private string _weather;
 
     // Constructor
-    public OutdoorEvent(string type, string title, string description, DateTime date, TimeSpan time, Address address, string weather) 
+    public OutdoorEvent(string type, string title, string description, string date, string time, Address address, string weather) 
     : base(type, title, description, date, time, address)
 {
     _weather = weather;

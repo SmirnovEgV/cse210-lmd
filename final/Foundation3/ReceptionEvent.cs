@@ -4,7 +4,7 @@ public class ReceptionEvent : Event
     private string _pathToRegister;
 
     // Constructor
-    public ReceptionEvent(string type, string title, string description, DateTime date, TimeSpan time, Address address, string pathToRegister) : base(type, title, description, date, time, address)
+    public ReceptionEvent(string type, string title, string description, string date, string time, Address address, string pathToRegister) : base(type, title, description, date, time, address)
     {
         _pathToRegister = pathToRegister;
     }
