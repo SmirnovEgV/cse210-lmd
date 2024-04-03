@@ -18,6 +18,6 @@ public class LectureEvent : Event
     {
         base.LongMessage(); // Call the base class's LongMessage method
         Console.WriteLine($"Presenter: {_presenterName}");
-        Console.WriteLine($"Capacity: {_capacity}");
+        Console.WriteLine($"Capacity: {_capacity}\n");
     }
 }

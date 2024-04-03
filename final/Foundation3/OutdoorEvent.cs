@@ -6,14 +6,14 @@ public class OutdoorEvent : Event
     // Constructor
     public OutdoorEvent(string type, string title, string description, string date, string time, Address address, string weather) 
     : base(type, title, description, date, time, address)
-{
-    _weather = weather;
-}
+    {
+        _weather = weather;
+    }
 
     // Method to display detailed information about the event
     public override void LongMessage()
     {
         base.LongMessage(); // Call the base class's LongMessage method
-        Console.WriteLine($"Weather Forecast: {_weather}");
+        Console.WriteLine($"Weather Forecast: {_weather}\n");
     }
 }

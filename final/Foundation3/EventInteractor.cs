@@ -11,9 +11,9 @@ public class EventInteractor
     // Method to output the list of events
     public void OutputListOfEvents()
     {
-        foreach (var ev in _listOfEvents)
+        foreach (var singleEvent in _listOfEvents)
         {
-            ev.LongMessage();
+            singleEvent.LongMessage();
         }
     }
 
@@ -56,31 +56,10 @@ public class EventInteractor
     }
 
     // Method to choose an event and message type
-    public void ChooseEventAndMessageType(int eventIndex, MessageType messageType)
+    public void ChooseEventAndMessageType() 
     {
-        if (eventIndex < 0 || eventIndex >= _listOfEvents.Count)
-        {
-            Console.WriteLine("Invalid event index.");
-            return;
-        }
-
-        Event selectedEvent = _listOfEvents[eventIndex];
-
-        switch (messageType)
-        {
-            case MessageType.Standard:
-                selectedEvent.StandardMessage();
-                break;
-            case MessageType.Long:
-                selectedEvent.LongMessage();
-                break;
-            case MessageType.Short:
-                selectedEvent.ShortMessage();
-                break;
-            default:
-                Console.WriteLine("Invalid message type.");
-                break;
-        }
+        _listOfEvents
+        
     }
 
     private LectureEvent CreateLectureEvent()

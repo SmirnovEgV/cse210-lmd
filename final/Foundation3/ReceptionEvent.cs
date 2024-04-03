@@ -13,6 +13,6 @@ public class ReceptionEvent : Event
     public override void LongMessage()
     {
         base.LongMessage(); // Call the base class's LongMessage method
-        Console.WriteLine($"Registration Link: {_pathToRegister}");
+        Console.WriteLine($"Registration Link: {_pathToRegister}\n");
     }
 }

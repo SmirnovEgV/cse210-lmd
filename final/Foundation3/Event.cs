@@ -41,7 +41,7 @@ public class Event
         Console.WriteLine($"Date: {_date}");
         Console.WriteLine($"Time: {_time}");
         Console.WriteLine($"Address: {_address}");
-        Console.WriteLine($"Description: {_description}\n");
+        Console.WriteLine($"Description: {_description}");
     }
 
     // Method to display a short message
