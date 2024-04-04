@@ -18,9 +18,4 @@ public class Address
         string address = $"{_street}, {_city}, {_stateOrProvince}, {_country}";
         return address;
     }
-    public Address CreateAddress()
-    {
-        Address address = new Address("","","","");
-        return address;
-    }
 }

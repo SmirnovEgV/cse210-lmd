@@ -2,41 +2,41 @@ class Program
 {
     static void Main(string[] args)
     {
-        EventInteractor eventInteractor = new EventInteractor();
-        int choice;
+        List<Event> _listOfEvents = new List<Event>();
 
-        do
+        Address address1 = new Address("New Street Alpha 92 92", "Kuram", "", "Kuwait");
+        Address address2 = new Address("Street Beta 222A", "Dresden", "", "Germany");
+        Address address3 = new Address("Street Gamma-Jojo 1", "Ashton", "South Carolina", "United States");
+
+        Event lectureEvent = new LectureEvent("Lecture", "Some Lecture Event", "We will hear a lecture about mother of all lectures",
+                                               "21 March 2024", "14:00", address2, "Peter Frederic Strause", 65);
+
+        Event receptionEvent = new ReceptionEvent("Reception", "Some Reception Event", "A Nice and cozy dinner party for married couples of N company",
+                                               "July 11, 2024", "7:45 PM", address3, "www.registar.cc.gov");
+
+        Event outdoorEvent = new OutdoorEvent("Outdoor", "Some outdoor event", "Come and join community us at community celebration of Rahmadan",
+                                       "2024-05-15", "09:45", address1, "Cloduy, +27");
+        _listOfEvents.Add(lectureEvent);
+        _listOfEvents.Add(receptionEvent);
+        _listOfEvents.Add(outdoorEvent);
+        
+        Console.WriteLine("Standart message output:");
+        foreach (var singleEvent in _listOfEvents)
         {
-            Console.Clear();
-            Console.WriteLine("What would you like to do?");
-            Console.WriteLine("1. Create an event");
-            Console.WriteLine("2. Output list of events");
-            Console.WriteLine("3. Quit");
-
-            if (int.TryParse(Console.ReadLine(), out choice))
-            {
-                 switch (choice)
-            {
-                case 1:
-                    eventInteractor.CreateAnEvent();
-                    break;
-                case 2:
-                    eventInteractor.OutputListOfEvents();
-                    Console.WriteLine("Press any key to continue");
-                    Console.ReadLine();
-                    break;
-                case 3:
-                    eventInteractor.ChooseEventAndMessageType();
-                    break;
-                case 4:
-                    Console.WriteLine("Quitting...");
-                    break;
-                default:
-                    Console.WriteLine("Invalid choice. Please enter a valid option.");
-                    break;
-            }
-            }
+            singleEvent.StandardMessage();
         }
-        while (choice != 4);
+
+        Console.WriteLine("Long message output:");
+        foreach (var singleEvent in _listOfEvents)
+        {
+            singleEvent.LongMessage();
+        }
+
+        Console.WriteLine("Short message output:");
+        foreach (var singleEvent in _listOfEvents)
+        {
+            singleEvent.ShortMessage();
+        }
+
     }
 }
