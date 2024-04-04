@@ -13,14 +13,14 @@ public class Video
         _comments = new List<Commentary>();
     }
 
-    public void AddComments()
+    public void AddComments(Commentary commentary)
     {
-        Console.Write("Enter commenter name: ");
-        string name = Console.ReadLine();
-        Console.Write("Enter commentary text: ");
-        string text = Console.ReadLine();
-        Commentary comment =  new Commentary(name, text);
-        _comments.Add(comment);
+        // Console.Write("Enter commenter name: ");
+        // string name = Console.ReadLine();
+        // Console.Write("Enter commentary text: ");
+        // string text = Console.ReadLine();
+        // Commentary comment =  new Commentary(name, text);
+        _comments.Add(commentary);
     }
 
     public void PrintVideoDetails()
