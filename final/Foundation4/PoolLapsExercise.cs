@@ -1,8 +1,8 @@
 public class PoolLapsExercise : Exercise
 {
-    private int _numberOfLaps;
+    private double _numberOfLaps;
 
-    public PoolLapsExercise(int length, DateTime date, string type, int numberOfLaps) : base(length,date,type)
+    public PoolLapsExercise(int length, DateTime date, string type, double numberOfLaps) : base(length,date,type)
     {
         _numberOfLaps = numberOfLaps;
     }
@@ -14,13 +14,13 @@ public class PoolLapsExercise : Exercise
     public override double GetSpeed()
     {
         double distance = GetDistance();
-        double speed = distance / _length * 60;
+        double speed = distance / (double)_length * 60;
         return speed;
     }
     public override double GetPace()
     {
         double distance = GetDistance();
-        return distance / _length;
+        return distance / (double)_length;
     }
 
 }
