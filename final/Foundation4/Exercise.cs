@@ -30,6 +30,6 @@ public class Exercise
         
         double pace = GetPace();
         
-        Console.WriteLine($"Date: {_date.ToString("dd MMM yyyy")}, {_type} ({_length} min),: Distance {distance} Km, Speed: {speed} KpH, Pace: {pace} min per Km");
+        Console.WriteLine($"Date: {_date.ToString("dd MMM yyyy")}, {_type} ({_length} min),: Distance {distance.ToString("0.00")} Km, Speed: {speed.ToString("0.00")} KpH, Pace: {pace.ToString("0.00")} min per Km");
     }
 }
